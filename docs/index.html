@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Docs — isi-music | Terminal Audio Player built in Rust</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "light-bg": "#f8fafc",
+            "light-surface": "#ffffff",
+            "light-text": "#0f172a",
+            "light-text-muted": "#475569",
+            "light-border": "#e2e8f0",
+            "light-primary": "#0284c7",
+            "on-secondary-fixed": "#111c2d",
+            "surface-container-high": "#272a31",
+            "surface-tint": "#3cd7ff",
+            "surface-variant": "#32353c",
+            "on-tertiary-fixed-variant": "#004c6e",
+            "primary-container": "#00d4ff",
+            "error": "#ffb4ab",
+            "on-secondary": "#263143",
+            "surface-container-lowest": "#0b0e14",
+            "secondary-fixed-dim": "#bcc7de",
+            "outline": "#859398",
+            "tertiary": "#c1e3ff",
+            "surface-container-highest": "#32353c",
+            "tertiary-container": "#7fcbff",
+            "inverse-surface": "#e1e2eb",
+            "tertiary-fixed": "#c9e6ff",
+            "secondary-fixed": "#d8e3fb",
+            "surface-container": "#1d2026",
+            "surface-dim": "#10131a",
+            "on-primary-fixed-variant": "#004e5f",
+            "primary-fixed-dim": "#3cd7ff",
+            "tertiary-fixed-dim": "#89ceff",
+            "on-secondary-fixed-variant": "#3c475a",
+            "outline-variant": "#3c494e",
+            "inverse-on-surface": "#2e3037",
+            "on-error-container": "#ffdad6",
+            "on-primary-container": "#00586b",
+            "on-error": "#690005",
+            "background": "#10131a",
+            "inverse-primary": "#00677e",
+            "on-tertiary-container": "#00557c",
+            "on-primary-fixed": "#001f27",
+            "primary-fixed": "#b4ebff",
+            "surface-container-low": "#191c22",
+            "on-surface-variant": "#bbc9cf",
+            "on-tertiary-fixed": "#001e2f",
+            "on-tertiary": "#00344d",
+            "on-surface": "#e1e2eb",
+            "on-secondary-container": "#aeb9d0",
+            "error-container": "#93000a",
+            "secondary": "#bcc7de",
+            "secondary-container": "#3e495d",
+            "on-primary": "#003642",
+            "surface-bright": "#363940",
+            "primary": "#a8e8ff",
+            "surface": "#10131a",
+            "on-background": "#e1e2eb",
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem",
+          },
+          spacing: {
+            "margin-mobile": "16px",
+            "margin-desktop": "64px",
+            gutter: "24px",
+            base: "4px",
+            "container-max": "1280px",
+            "section-gap": "120px",
+          },
+          fontFamily: {
+            "body-base": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "display-lg-mobile": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "code-sm": ["JetBrains Mono"],
+            "label-caps": ["JetBrains Mono"],
+          },
+          fontSize: {
+            "body-base": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "headline-md": ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "display-lg-mobile": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "800" }],
+            "code-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link href="../css/style.css" rel="stylesheet"/>
+</head>
+
+<body class="font-body-base text-body-base antialiased selection:bg-light-primary/20 dark:selection:bg-primary-container selection:text-light-text dark:selection:text-on-primary-container relative min-h-screen flex flex-col">
+  <div class="bg-glow"></div>
+
+  <!-- Header -->
+  <header class="bg-white/80 dark:bg-background/80 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-light-border dark:border-outline-variant/20">
+    <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-16">
+      <a class="font-display-lg text-headline-md tracking-tighter text-light-primary dark:text-primary flex items-center gap-2" href="../">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+        isi-music
+      </a>
+
+      <nav class="hidden md:flex gap-8">
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors duration-200" href="../#features">Features</a>
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors duration-200" href="../#install">Install</a>
+        <a class="font-code-sm text-code-sm text-light-primary dark:text-primary border-b-2 border-light-primary dark:border-primary pb-1" href="#">Docs</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button
+          aria-label="Toggle Dark Mode"
+          class="text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors p-1.5 rounded-full flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-light-primary/50 dark:focus:ring-primary/50"
+          id="theme-toggle"
+        >
+          <span class="material-symbols-outlined text-[20px]" id="theme-icon">light_mode</span>
+        </button>
+        <a
+          class="hidden md:inline-flex px-4 py-2 bg-light-primary dark:bg-primary text-white dark:text-on-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/90 dark:hover:bg-primary-fixed transition-colors active:scale-95"
+          href="https://github.com/glrmrissi/isi_music"
+        >GITHUB</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop pt-16 pb-section-gap w-full max-w-container-max mx-auto">
+    <div class="text-center mb-12 max-w-3xl fade-in-up">
+      <div class="inline-flex items-center gap-2 bg-white dark:bg-surface-container-low px-3 py-1 rounded-full border border-light-primary/20 dark:border-primary/20 mb-6">
+        <span class="w-2 h-2 rounded-full bg-light-primary dark:bg-primary animate-pulse"></span>
+        <span class="font-label-caps text-label-caps text-light-primary dark:text-primary">STATUS: 206 PARTIAL CONTENT</span>
+      </div>
+
+      <h1 class="font-code-sm text-[clamp(24px,10vw,40px)] md:text-[64px] text-light-primary dark:text-primary mb-6 leading-tight break-words">
+        Docs /<br/>Under_Construction
+      </h1>
+
+      <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-lg md:text-xl">
+        Our engineers are hard at work writing the manuals. In the meantime, the <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary">isi-music --help</code> is your best friend.
+      </p>
+    </div>
+
+    <!-- Terminal Window -->
+    <div class="w-full max-w-2xl bg-white dark:bg-surface-container-lowest rounded-lg overflow-hidden border border-light-border dark:border-primary/20 shadow-xl dark:shadow-[0_0_30px_rgba(168,232,255,0.05)] relative mb-12 fade-in-up delay-100">
+      <div class="bg-slate-100 dark:bg-surface-container-high px-4 py-2 flex items-center border-b border-light-border dark:border-primary/10">
+        <div class="flex gap-2 mr-4">
+          <span class="w-3 h-3 rounded-full bg-red-400 dark:bg-error/50"></span>
+          <span class="w-3 h-3 rounded-full bg-slate-400 dark:bg-secondary/50"></span>
+          <span class="w-3 h-3 rounded-full bg-sky-400 dark:bg-primary/50"></span>
+        </div>
+        <span class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant text-xs">build_docs.sh</span>
+      </div>
+      <div class="p-6 font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant relative min-h-[200px]">
+        <div class="relative z-10 flex flex-col gap-2">
+          <div class="flex"><span class="text-light-primary dark:text-primary mr-2">&gt;</span><span>initializing documentation builder...</span></div>
+          <div class="flex"><span class="text-light-primary dark:text-primary mr-2">&gt;</span><span class="text-slate-500 dark:text-secondary">fetching latest rustdoc artifacts [DONE]</span></div>
+          <div class="flex"><span class="text-light-primary dark:text-primary mr-2">&gt;</span><span class="text-slate-500 dark:text-secondary">parsing markdown chapters [DONE]</span></div>
+          <div class="flex items-center gap-2 mt-4">
+            <span class="text-light-primary dark:text-primary">&gt;</span>
+            <span>Compiling structural_topology.md</span>
+          </div>
+          <div class="w-full h-1 bg-slate-200 dark:bg-surface-variant rounded-full mt-1 mb-2 overflow-hidden">
+            <div class="h-full bg-light-primary dark:bg-primary w-2/3 relative shadow-[0_0_10px_rgba(2,132,199,0.5)] dark:shadow-[0_0_10px_#a8e8ff]"></div>
+          </div>
+          <div class="flex"><span class="text-light-primary dark:text-primary mr-2">&gt;</span><span>generating static site... <span class="cursor-blink bg-light-primary dark:bg-primary w-2 h-4 inline-block align-middle ml-1"></span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Actions -->
+    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto fade-in-up delay-200">
+      <a class="w-full sm:w-auto px-8 py-3 bg-light-primary dark:bg-primary text-white dark:text-on-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/90 dark:hover:bg-primary-fixed transition-colors shadow-lg dark:shadow-[0_0_15px_rgba(168,232,255,0.4)] active:scale-95 flex items-center justify-center gap-2" href="../">
+        <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        BACK TO HOME
+      </a>
+      <a class="w-full sm:w-auto px-8 py-3 bg-transparent border border-light-primary dark:border-primary text-light-primary dark:text-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/10 dark:hover:bg-primary/10 transition-colors active:scale-95 flex items-center justify-center gap-2" href="#">
+        <span class="material-symbols-outlined text-[18px]">forum</span>
+        JOIN DISCORD FOR UPDATES
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-50 dark:bg-surface-container-lowest border-t border-light-border dark:border-outline-variant w-full py-12 mt-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter max-w-container-max mx-auto">
+      <div class="font-code-sm text-code-sm text-light-primary dark:text-primary opacity-80 hover:opacity-100 transition-opacity">
+        © 2026 ISI-MUSIC // RUST-POWERED AUDIO
+      </div>
+      <div class="flex gap-6">
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/40 dark:decoration-primary/40 transition-colors" href="https://github.com/glrmrissi/isi_music">SOURCE</a>
+        <a class="font-code-sm text-code-sm text-light-primary dark:text-primary underline decoration-light-primary/40 dark:decoration-primary/40 transition-colors" href="#">DOCS</a>
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/40 dark:decoration-primary/40 transition-colors" href="#">LICENSE</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
