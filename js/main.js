@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const saved = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  // Default to light mode
   if (saved === 'dark') {
     html.classList.add('dark');
     themeIcon.textContent = 'dark_mode';
@@ -22,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', dark ? 'dark' : 'light');
   });
 
-  // Scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -33,4 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (window.scrollY > 400) {
+            backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            backToTop.classList.add('opacity-100', 'pointer-events-auto');
+          } else {
+            backToTop.classList.add('opacity-0', 'pointer-events-none');
+            backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });

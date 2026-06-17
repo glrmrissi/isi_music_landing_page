@@ -45,3 +45,18 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+.glass-panel code ::selection {
+  background: #06b6d4 !important;
+  color: #0f172a !important;
+}
+
+.dark .glass-panel code ::selection {
+  background: #22d3ee !important;
+  color: #042f2e !important;
+}
+
+.glass-panel > .p-4 > code {
+  display: inline-block;
+  min-width: 100%;
+}

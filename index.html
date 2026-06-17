@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>isi-music | Terminal Audio Player built in Rust</title>
+  <title>isi-music</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icon_isi_music.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon_isi_music.png"/>
 
-  <!-- Google Fonts -->
+  
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-  <!-- Tailwind CSS via CDN -->
+  
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <!-- Tailwind Config -->
+  
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -110,19 +112,18 @@
     };
   </script>
 
-  <!-- Custom Styles -->
+  
   <link href="css/style.css" rel="stylesheet"/>
 </head>
 
 <body class="font-body-base text-body-base antialiased selection:bg-light-primary/20 dark:selection:bg-primary-container selection:text-light-text dark:selection:text-on-primary-container relative">
   <div class="bg-glow"></div>
 
-  <!-- Header -->
+  
   <header class="bg-white/80 dark:bg-background/80 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-light-border dark:border-outline-variant/20">
     <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-16">
-      <a class="font-display-lg text-headline-md tracking-tighter text-light-primary dark:text-primary flex items-center gap-2" href="#">
-        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
-        isi-music
+        <a class="flex items-center" href="#">
+        <img src="assets/logo_isi_music.png" alt="isi-music" class="h-32 object-contain"/>
       </a>
 
       <nav class="hidden md:flex gap-8">
@@ -148,73 +149,7 @@
   </header>
 
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-    <!-- Hero -->
-    <section class="min-h-[716px] flex flex-col justify-center items-center text-center py-section-gap relative">
-      <div class="space-y-6 max-w-3xl fade-in-up">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 rounded-full mb-4">
-          <span class="w-2 h-2 rounded-full bg-light-primary dark:bg-primary animate-pulse"></span>
-          <span class="font-label-caps text-label-caps text-light-primary dark:text-primary tracking-widest">[v0.4.0]</span>
-        </div>
-
-        <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-light-text dark:text-on-surface drop-shadow-sm dark:drop-shadow-md">
-          <span class="text-light-primary dark:text-primary">&gt;</span> isi-music<span class="cursor-blink text-light-primary dark:text-primary">_</span>
-        </h1>
-
-        <p class="font-body-base text-body-base md:text-[20px] text-light-text-muted dark:text-on-surface-variant max-w-2xl mx-auto">
-          Terminal audio player — built in Rust. Blazing fast, memory safe, and designed for keyboard-centric workflows.
-        </p>
-
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            class="w-full sm:w-auto px-8 py-3 bg-light-primary dark:bg-primary text-white dark:text-on-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/90 dark:hover:bg-primary-fixed transition-colors shadow-lg dark:shadow-[0_0_15px_rgba(168,232,255,0.4)] active:scale-95 flex items-center justify-center gap-2"
-            href="#install"
-          >
-            <span class="material-symbols-outlined text-[18px]">download</span>
-            DOWNLOAD
-          </a>
-          <a
-            class="w-full sm:w-auto px-8 py-3 bg-transparent border border-light-primary dark:border-primary text-light-primary dark:text-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/10 dark:hover:bg-primary/10 transition-colors active:scale-95 flex items-center justify-center gap-2"
-            href="docs/"
-          >
-            <span class="material-symbols-outlined text-[18px]">menu_book</span>
-            DOCUMENTATION
-          </a>
-        </div>
-      </div>
-
-      <!-- Terminal Preview -->
-      <div class="mt-20 w-full max-w-4xl glass-panel rounded-lg overflow-hidden fade-in-up delay-200 relative scanlines border border-light-border dark:border-outline-variant/30 shadow-xl dark:shadow-2xl">
-        <div class="terminal-header px-4 py-2 flex items-center gap-2">
-          <span class="terminal-dot bg-red-400 dark:bg-error"></span>
-          <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
-          <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
-          <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-2">isi-music --play</span>
-        </div>
-        <div class="p-6 h-64 bg-slate-900 dark:bg-[#0b0e14] font-code-sm text-code-sm text-sky-300 dark:text-primary/80 overflow-hidden relative flex flex-col justify-end">
-          <!-- Audio Visualizer Mockup -->
-          <div class="flex items-end gap-[2px] h-32 w-full opacity-70">
-            <div class="w-full bg-sky-400/20 dark:bg-primary/20 h-[10%] animate-[bounce_1s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/40 dark:bg-primary/40 h-[30%] animate-[bounce_1.2s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/60 dark:bg-primary/60 h-[80%] animate-[bounce_0.8s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/80 dark:bg-primary/80 h-[50%] animate-[bounce_1.5s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400 dark:bg-primary h-[90%] animate-[bounce_0.9s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/80 dark:bg-primary/80 h-[40%] animate-[bounce_1.1s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/60 dark:bg-primary/60 h-[70%] animate-[bounce_1.3s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/40 dark:bg-primary/40 h-[20%] animate-[bounce_1.4s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/20 dark:bg-primary/20 h-[50%] animate-[bounce_1s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/20 dark:bg-primary/20 h-[10%] animate-[bounce_1s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/40 dark:bg-primary/40 h-[30%] animate-[bounce_1.2s_infinite_alternate]"></div>
-            <div class="w-full bg-sky-400/60 dark:bg-primary/60 h-[80%] animate-[bounce_0.8s_infinite_alternate]"></div>
-          </div>
-          <div class="mt-4 flex justify-between items-center border-t border-sky-400/20 dark:border-primary/20 pt-2">
-            <span class="text-slate-200 dark:text-on-surface">Now Playing: Rust in Peace - Megadeth</span>
-            <span class="text-sky-300 dark:text-primary">[=======&gt;.......] 2:34 / 5:02</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
+    
     <section class="py-section-gap" id="features">
       <div class="mb-12 text-center fade-in-up">
         <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-2">Core Features</h2>
@@ -229,7 +164,7 @@
           <div>
             <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">Spotify Streaming</h3>
             <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
-              Stream via librespot — no official Spotify app required. Seamless authentication with PKCE flow.
+              Stream via librespot - no official Spotify app required. Seamless authentication with PKCE flow.
             </p>
           </div>
         </div>
@@ -313,7 +248,7 @@
           <div>
             <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">MPRIS2 Integration</h3>
             <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
-              Full Linux desktop integration — media keys, Waybar widget, and playerctl support.
+              Full Linux desktop integration - media keys, Waybar widget, and playerctl support.
             </p>
           </div>
         </div>
@@ -332,7 +267,7 @@
       </div>
     </section>
 
-    <!-- Installation -->
+    
     <section class="py-section-gap border-t border-light-border dark:border-outline-variant/10" id="install">
       <div class="mb-12 text-center fade-in-up">
         <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-2">Installation</h2>
@@ -340,7 +275,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        <!-- Linux -->
+        
         <div class="glass-card p-6 rounded-lg fade-in-up delay-100 flex flex-col gap-4">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
@@ -351,9 +286,9 @@
           <div class="glass-panel rounded overflow-hidden">
             <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
               <div class="flex items-center gap-2">
-                <span class="terminal-dot bg-slate-400 dark:bg-surface-variant"></span>
-                <span class="terminal-dot bg-slate-400 dark:bg-surface-variant"></span>
-                <span class="terminal-dot bg-slate-400 dark:bg-surface-variant"></span>
+                <span class="terminal-dot bg-red-400 dark:bg-error"></span>
+                <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
+                <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
                 <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
               </div>
               <button
@@ -365,19 +300,19 @@
               </button>
             </div>
             <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
-              <code class="font-code-sm text-code-sm text-[13px] whitespace-nowrap leading-relaxed">
-                <span class="text-sky-300 dark:text-primary">$</span> <span class="text-sky-200 dark:text-tertiary-container">curl</span> -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-linux-x86_64 -o isi-music<br/>
-                <span class="text-sky-300 dark:text-primary">$</span> <span class="text-sky-200 dark:text-tertiary-container">chmod</span> +x isi-music<br/>
-                <span class="text-sky-300 dark:text-primary">$</span> <span class="text-sky-200 dark:text-tertiary-container">sudo</span> mv isi-music /usr/local/bin/
+              <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
+                <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">curl</span> -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-linux-x86_64 -o isi-music<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">chmod</span> +x isi-music<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">sudo</span> mv isi-music /usr/local/bin/
               </code>
             </div>
           </div>
-          <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-[13px]">
+          <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-code-sm">
             Dependencies: <span class="text-light-primary dark:text-primary font-code-sm text-code-sm">sudo apt install libasound2t64 libpulse0</span>
           </p>
         </div>
 
-        <!-- macOS -->
+        
         <div class="glass-card p-6 rounded-lg fade-in-up delay-200 flex flex-col gap-4">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
@@ -388,9 +323,9 @@
           <div class="glass-panel rounded overflow-hidden">
             <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
               <div class="flex items-center gap-2">
-                <span class="terminal-dot bg-slate-400 dark:bg-surface-variant"></span>
-                <span class="terminal-dot bg-slate-400 dark:bg-surface-variant"></span>
-                <span class="terminal-dot bg-slate-400 dark:bg-surface-variant"></span>
+                <span class="terminal-dot bg-red-400 dark:bg-error"></span>
+                <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
+                <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
                 <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
               </div>
               <button
@@ -402,14 +337,14 @@
               </button>
             </div>
             <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
-              <code class="font-code-sm text-code-sm text-[13px] whitespace-nowrap leading-relaxed">
-                <span class="text-sky-300 dark:text-primary">$</span> <span class="text-sky-200 dark:text-tertiary-container">curl</span> -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-macos-arm64 -o isi-music<br/>
-                <span class="text-sky-300 dark:text-primary">$</span> <span class="text-sky-200 dark:text-tertiary-container">chmod</span> +x isi-music<br/>
-                <span class="text-sky-300 dark:text-primary">$</span> <span class="text-sky-200 dark:text-tertiary-container">sudo</span> mv isi-music /usr/local/bin/
+              <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
+                <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">curl</span> -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-macos-arm64 -o isi-music<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">chmod</span> +x isi-music<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">sudo</span> mv isi-music /usr/local/bin/
               </code>
             </div>
           </div>
-          <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-[13px]">
+          <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-code-sm">
             macOS may prompt for audio permissions on first run.
           </p>
         </div>
@@ -422,7 +357,7 @@
       </div>
     </section>
 
-    <!-- Keybindings -->
+    
     <section class="py-section-gap border-t border-light-border dark:border-outline-variant/10" id="keybindings">
       <div class="mb-12 text-center fade-in-up">
         <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-2">Vim-Inspired Keybindings</h2>
@@ -502,21 +437,97 @@
         </table>
       </div>
     </section>
+
+
+    <section class="py-section-gap border-t border-light-border dark:border-outline-variant/10" id="integrations">
+      <div class="mb-12 text-center fade-in-up">
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-2">Integrations</h2>
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest">// Desktop • Scrobble • Social</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="glass-card p-6 rounded-lg fade-in-up delay-100 flex flex-col gap-4">
+          <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+            <span class="material-symbols-outlined text-light-primary dark:text-primary">cast</span>
+          </div>
+          <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface">MPRIS2</h3>
+          <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant break-words">
+            Registers as <code class="bg-slate-100 dark:bg-surface-container px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm break-all">org.mpris.MediaPlayer2.isi_music</code>. Media keys, Waybar widgets, and playerctl support in both TUI and daemon mode.
+          </p>
+          <div class="glass-panel rounded overflow-hidden mt-auto">
+            <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">json</span>
+              </div>
+              <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('\"player-icons\": { \"isi_music\": \"\" }')" title="Copy to clipboard">
+                <span class="material-symbols-outlined text-[14px]">content_copy</span>
+              </button>
+            </div>
+            <div class="p-3 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+              <code class="font-code-sm text-code-sm text-[11px] text-slate-300 whitespace-nowrap">
+                <span class="text-slate-400">"player-icons": { "isi_music": "" }</span>
+              </code>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card p-6 rounded-lg fade-in-up delay-200 flex flex-col gap-4">
+          <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+            <span class="material-symbols-outlined text-light-primary dark:text-primary">music_note</span>
+          </div>
+          <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface">Last.fm</h3>
+          <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
+            Automatic scrobbling. "Now playing" on track start, scrobbles at 50% or 4 minutes. Configure via <code class="bg-slate-100 dark:bg-surface-container px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">isi-music setup-lastfm</code>.
+          </p>
+        </div>
+        <div class="glass-card p-6 rounded-lg fade-in-up delay-300 flex flex-col gap-4">
+          <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+            <span class="material-symbols-outlined text-light-primary dark:text-primary">group</span>
+          </div>
+          <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface">Discord</h3>
+          <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
+            Rich Presence showing current track. Enable in <code class="bg-slate-100 dark:bg-surface-container px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">config.toml</code> with <code class="bg-slate-100 dark:bg-surface-container px-1 rounded text-purple-400 font-code-sm text-code-sm">[discord] enabled = true</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="py-section-gap border-t border-light-border dark:border-outline-variant/10" id="spotify-setup">
+      <div class="mb-12 text-center fade-in-up">
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-2">Spotify Setup</h2>
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest">// Client ID Required</p>
+      </div>
+      <div class="max-w-3xl mx-auto glass-card p-6 rounded-lg fade-in-up delay-100">
+        <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-2">
+          The February 2026 Spotify Web API changes require a Client ID for all API requests.
+        </p>
+        <ol class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant list-decimal list-inside space-y-2">
+          <li>Go to the <a class="text-light-primary dark:text-primary hover:underline" href="https://developer.spotify.com/dashboard">Spotify Developer Dashboard</a> and click <strong class="text-light-text dark:text-on-surface">"Create app"</strong></li>
+          <li>Set the Redirect URI to <code class="bg-slate-100 dark:bg-surface-container px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">http://127.0.0.1:8888/callback</code></li>
+          <li>Copy the Client ID and run <code class="bg-slate-100 dark:bg-surface-container px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">isi-music setup-spotify</code></li>
+        </ol>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
+  
   <footer class="bg-slate-50 dark:bg-surface-dim border-t border-light-border dark:border-outline-variant/10 w-full py-section-gap">
     <div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter">
-      <div class="font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant">
+      <div class="flex items-center gap-2 font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant">
+        <img src="assets/icon_isi_music.png" alt="isi-music" class="h-12 object-contain"/>
         © 2026 ISI-MUSIC PROJECT. RUST-POWERED AUDIO.
       </div>
       <div class="flex gap-6">
         <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/30 dark:decoration-primary/30 transition-colors" href="https://github.com/glrmrissi/isi_music">GitHub</a>
         <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/30 dark:decoration-primary/30 transition-colors" href="https://github.com/glrmrissi/isi_music/releases">Releases</a>
-        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/30 dark:decoration-primary/30 transition-colors" href="#">Discord</a>
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/30 dark:decoration-primary/30 transition-colors" href="discord.html">Discord</a>
       </div>
     </div>
   </footer>
+
+  
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-light-primary dark:bg-primary text-white dark:text-on-primary rounded-full shadow-lg dark:shadow-[0_0_15px_rgba(168,232,255,0.4)] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 active:scale-95">
+    <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+  </button>
 
   <script src="js/main.js"></script>
 </body>
