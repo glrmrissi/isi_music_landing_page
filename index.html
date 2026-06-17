@@ -149,6 +149,69 @@
   </header>
 
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <section class="min-h-[716px] flex flex-col justify-center items-center text-center py-section-gap relative">
+      <div class="space-y-6 max-w-3xl fade-in-up">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 rounded-full mb-4">
+          <span class="w-2 h-2 rounded-full bg-light-primary dark:bg-primary animate-pulse"></span>
+          <span class="font-label-caps text-label-caps text-light-primary dark:text-primary tracking-widest">[v1.0.1]</span>
+        </div>
+
+        <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-light-text dark:text-on-surface drop-shadow-sm dark:drop-shadow-md">
+          <span class="text-light-primary dark:text-primary">&gt;</span> isi-music<span class="cursor-blink text-light-primary dark:text-primary">_</span>
+        </h1>
+
+        <p class="font-body-base text-body-base md:text-[20px] text-light-text-muted dark:text-on-surface-variant max-w-2xl mx-auto">
+          Terminal audio player — built in Rust. Blazing fast, memory safe, and designed for keyboard-centric workflows.
+        </p>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            class="w-full sm:w-auto px-8 py-3 bg-light-primary dark:bg-primary text-white dark:text-on-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/90 dark:hover:bg-primary-fixed transition-colors shadow-lg dark:shadow-[0_0_15px_rgba(168,232,255,0.4)] active:scale-95 flex items-center justify-center gap-2"
+            href="#install"
+          >
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            DOWNLOAD
+          </a>
+          <a
+            class="w-full sm:w-auto px-8 py-3 bg-transparent border border-light-primary dark:border-primary text-light-primary dark:text-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/10 dark:hover:bg-primary/10 transition-colors active:scale-95 flex items-center justify-center gap-2"
+            href="docs/"
+          >
+            <span class="material-symbols-outlined text-[18px]">menu_book</span>
+            DOCUMENTATION
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-20 w-full max-w-4xl glass-panel rounded-lg overflow-hidden fade-in-up delay-200 relative scanlines border border-light-border dark:border-outline-variant/30 shadow-xl dark:shadow-2xl">
+        <div class="terminal-header px-4 py-2 flex items-center gap-2">
+          <span class="terminal-dot bg-red-400 dark:bg-error"></span>
+          <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
+          <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
+          <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-2">isi-music --play</span>
+        </div>
+        <div class="p-6 h-64 bg-slate-900 dark:bg-[#0b0e14] font-code-sm text-code-sm text-sky-300 dark:text-primary/80 overflow-hidden relative flex flex-col justify-end">
+          <div class="flex items-end gap-[2px] h-32 w-full opacity-70">
+            <div class="w-full bg-sky-400/20 dark:bg-primary/20 h-[10%] animate-[bounce_1s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/40 dark:bg-primary/40 h-[30%] animate-[bounce_1.2s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/60 dark:bg-primary/60 h-[80%] animate-[bounce_0.8s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/80 dark:bg-primary/80 h-[50%] animate-[bounce_1.5s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400 dark:bg-primary h-[90%] animate-[bounce_0.9s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/80 dark:bg-primary/80 h-[40%] animate-[bounce_1.1s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/60 dark:bg-primary/60 h-[70%] animate-[bounce_1.3s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/40 dark:bg-primary/40 h-[20%] animate-[bounce_1.4s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/20 dark:bg-primary/20 h-[50%] animate-[bounce_1s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/20 dark:bg-primary/20 h-[10%] animate-[bounce_1s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/40 dark:bg-primary/40 h-[30%] animate-[bounce_1.2s_infinite_alternate]"></div>
+            <div class="w-full bg-sky-400/60 dark:bg-primary/60 h-[80%] animate-[bounce_0.8s_infinite_alternate]"></div>
+          </div>
+          <div class="mt-4 flex justify-between items-center border-t border-sky-400/20 dark:border-primary/20 pt-2">
+            <span class="text-slate-200 dark:text-on-surface">Now Playing: Lie To Me - Lil Peep</span>
+            <span class="text-sky-300 dark:text-primary">[=======&gt;.......] 1:12 / 2:19</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     
     <section class="py-section-gap" id="features">
       <div class="mb-12 text-center fade-in-up">
