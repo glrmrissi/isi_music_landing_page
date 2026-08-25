@@ -211,7 +211,7 @@
             <tbody class="font-code-sm text-code-sm text-light-text dark:text-on-surface">
               <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
                 <td class="px-6 py-4 font-semibold">RAM Usage</td>
-                <td class="px-6 py-4 text-light-primary dark:text-primary">36–44 MB</td>
+                <td class="px-6 py-4 text-light-primary dark:text-primary">36 to 44 MB</td>
                 <td class="px-6 py-4 text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">Scales with track duration</td>
               </tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
@@ -226,8 +226,8 @@
               </tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
                 <td class="px-6 py-4 font-semibold">Threads</td>
-                <td class="px-6 py-4 text-light-primary dark:text-primary">25–27</td>
-                <td class="px-6 py-4 text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">Async tokio workers - lightweight</td>
+                <td class="px-6 py-4 text-light-primary dark:text-primary">25 to 27</td>
+                <td class="px-6 py-4 text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">Async tokio workers, lightweight</td>
               </tr>
               <tr class="hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
                 <td class="px-6 py-4 font-semibold">Test Hardware</td>
@@ -253,7 +253,7 @@
             <div>
               <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">Why RAM scales</h3>
               <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-[15px]">
-                The audio buffer runs in memory for speed - much faster than reading from the file protocol. Longer tracks mean a larger buffer, so memory usage grows with track duration.
+                The audio buffer runs in memory for speed, much faster than reading from the file protocol. Longer tracks mean a larger buffer, so memory usage grows with track duration.
               </p>
             </div>
           </div>
@@ -265,7 +265,7 @@
             <div>
               <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">25+ threads? Not a lot.</h3>
               <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-[15px]">
-                Tokio runtime, audio decoding, Spotify API calls, UI rendering - everything is async. Each thread is lightweight and idle most of the time. This is normal for a Rust async app.
+                Tokio runtime, audio decoding, Spotify API calls, UI rendering: everything is async. Each thread is lightweight and idle most of the time. This is normal for a Rust async app.
               </p>
             </div>
           </div>
@@ -296,7 +296,7 @@
             <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
               A Nerd Font is required for proper album art and UI rendering.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-code-sm text-code-sm">
+            <div class="font-code-sm text-code-sm">
               <div class="glass-panel rounded overflow-hidden">
                 <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
                   <div class="flex items-center gap-2">
@@ -314,25 +314,6 @@
                     <span class="text-sky-400 dark:text-primary">$</span> mkdir -p ~/.local/share/fonts<br/>
                     <span class="text-sky-400 dark:text-primary">$</span> unzip NerdFont.zip -d ~/.local/share/fonts<br/>
                     <span class="text-sky-400 dark:text-primary">$</span> fc-cache -fv
-                  </code>
-                </div>
-              </div>
-              <div class="glass-panel rounded overflow-hidden">
-                <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
-                  <div class="flex items-center gap-2">
-                    <span class="terminal-dot bg-red-400 dark:bg-error"></span>
-                    <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
-                    <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
-                    <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
-                  </div>
-                  <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('brew tap homebrew/cask-fonts' + '\n' + 'brew install font-fira-code-nerd-font')" title="Copy to clipboard">
-                    <span class="material-symbols-outlined text-[14px]">content_copy</span>
-                  </button>
-                </div>
-                <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
-                  <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
-                    <span class="text-sky-400 dark:text-primary">$</span> brew tap homebrew/cask-fonts<br/>
-                    <span class="text-sky-400 dark:text-primary">$</span> brew install font-fira-code-nerd-font
                   </code>
                 </div>
               </div>
@@ -372,17 +353,17 @@
                     <span class="terminal-dot bg-red-400 dark:bg-error"></span>
                     <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
                     <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
-                    <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
+                    <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">powershell</span>
                   </div>
-                  <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('curl -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-macos-arm64 -o isi-music' + '\n' + 'chmod +x isi-music' + '\n' + 'sudo mv isi-music /usr/local/bin/')" title="Copy to clipboard">
+                  <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('Invoke-WebRequest -Uri https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-windows-x86_64.exe -OutFile isi-music.exe' + '\n' + 'mkdir \"$env:LOCALAPPDATA\\Programs\\isi-music\" -Force' + '\n' + 'move isi-music.exe \"$env:LOCALAPPDATA\\Programs\\isi-music\\\"')" title="Copy to clipboard">
                     <span class="material-symbols-outlined text-[14px]">content_copy</span>
                   </button>
                 </div>
                 <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
                   <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
-                    <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">curl</span> -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-macos-arm64 -o isi-music<br/>
-                    <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">chmod</span> +x isi-music<br/>
-                    <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">sudo</span> mv isi-music /usr/local/bin/
+                    <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">Invoke-WebRequest</span> -Uri .../isi-music-windows-x86_64.exe<br/>
+                    <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">mkdir</span> "$env:LOCALAPPDATA\Programs\isi-music" -Force<br/>
+                    <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">move</span> isi-music.exe "$env:LOCALAPPDATA\Programs\isi-music\"
                   </code>
                 </div>
               </div>
@@ -427,15 +408,14 @@
           </div>
           <div class="p-6">
             <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
-              All config lives under <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">~/.config/isi-music/</code> on Linux,
-              <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">~/Library/Application Support/isi-music/</code> on macOS.
+              All config lives under <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">~/.config/isi-music/</code> on Linux and <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">%APPDATA%\isi-music\</code> on Windows.
             </p>
             <div class="glass-panel rounded overflow-hidden">
               <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
                 <div class="flex items-center gap-2">
                   <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">toml</span>
                 </div>
-                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('[spotify]' + '\n' + 'client_id = &quot;your_client_id_here&quot;' + '\n' + '' + '\n' + '[local]' + '\n' + 'music_dir = &quot;~/Music&quot;' + '\n' + '' + '\n' + '[lastfm]' + '\n' + 'api_key = &quot;your_lastfm_api_key&quot;' + '\n' + 'api_secret = &quot;your_lastfm_api_secret&quot;' + '\n' + 'session_key = &quot;obtained_via_setup-lastfm&quot;' + '\n' + '' + '\n' + '[discord]' + '\n' + 'enabled = true' + '\n' + '' + '\n' + '[musixmatch]' + '\n' + 'musixmatch_api_key = &quot;your_musixmatch_api_key&quot;')" title="Copy to clipboard">
+                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('[spotify]' + '\n' + 'client_id = &quot;your_client_id_here&quot;' + '\n' + '' + '\n' + '[local]' + '\n' + 'music_dir = &quot;~/Music&quot;' + '\n' + '' + '\n' + '[lastfm]' + '\n' + 'api_key = &quot;your_lastfm_api_key&quot;' + '\n' + 'api_secret = &quot;your_lastfm_api_secret&quot;' + '\n' + 'session_key = &quot;obtained_via_setup-lastfm&quot;' + '\n' + '' + '\n' + '[discord]' + '\n' + 'enabled = true' + '\n' + '' + '\n' + '[musixmatch]' + '\n' + 'musixmatch_api_key = &quot;your_musixmatch_api_key&quot;' + '\n' + '' + '\n' + '[ui]' + '\n' + 'show_cover_images = true' + '\n' + 'show_visualizer = false' + '\n' + 'compact_mode_default = false' + '\n' + 'show_breadcrumb = true' + '\n' + 'autoplay = true' + '\n' + '' + '\n' + '[options]' + '\n' + 'hot_reload = true' + '\n' + 'smtc_enabled = true' + '\n' + 'media_keys_enabled = true')" title="Copy to clipboard">
                   <span class="material-symbols-outlined text-[14px]">content_copy</span>
                 </button>
               </div>
@@ -452,7 +432,17 @@
                 <span class="text-amber-400">[discord]</span><br/>
                 <span class="text-slate-400">enabled = </span><span class="text-purple-400">true</span><br/><br/>
                 <span class="text-amber-400">[musixmatch]</span><br/>
-                <span class="text-slate-400">musixmatch_api_key = </span><span class="text-green-400">"your_musixmatch_api_key"</span>
+                <span class="text-slate-400">musixmatch_api_key = </span><span class="text-green-400">"your_musixmatch_api_key"</span><br/><br/>
+                <span class="text-amber-400">[ui]</span><br/>
+                <span class="text-slate-400">show_cover_images = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">show_visualizer = </span><span class="text-purple-400">false</span><br/>
+                <span class="text-slate-400">compact_mode_default = </span><span class="text-purple-400">false</span><br/>
+                <span class="text-slate-400">show_breadcrumb = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">autoplay = </span><span class="text-purple-400">true</span><br/><br/>
+                <span class="text-amber-400">[options]</span><br/>
+                <span class="text-slate-400">hot_reload = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">smtc_enabled = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">media_keys_enabled = </span><span class="text-purple-400">true</span>
               </code>
               </div>
             </div>
@@ -539,13 +529,18 @@
             </thead>
             <tbody>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Space</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Play / Pause</td></tr>
-              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">n</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">p</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Next / Previous track</td></tr>
-              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">+</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">-</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Volume up / down</td></tr>
-              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">←</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">→</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Seek +/- 5s (hold for +/- 10s)</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">n</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">p</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Next / Previous track. With shuffle on, previous goes back through actual play history.</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">=</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">-</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Volume up / down</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">←</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">→</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Seek backward / forward 5s (hold for 10s)</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">5</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Seek to middle of track</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">s</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle shuffle</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">r</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Cycle repeat (off → queue → track)</td></tr>
-              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">/</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Search</td></tr>
-              <tr><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">q</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Quit</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">´</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle radio mode</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Alt+R</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Get recommendations</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">l</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Like current track</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">a</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Add track to queue</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Delete</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Remove selected item from queue</td></tr>
+              <tr><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">o</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Sort tracks</td></tr>
             </tbody>
           </table>
         </div>
@@ -565,8 +560,14 @@
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Tab</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Shift+Tab</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Next / Previous panel</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">↑</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">↓</kbd> or <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">k</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">j</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Navigate within a panel</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+↑</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+↓</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">First / last item</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">M</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Jump to middle of list</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Enter</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Play selected / open album or artist</td></tr>
-              <tr><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Esc</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Back / Close search / Exit fullscreen</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Esc</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Back / Close search / Exit fullscreen</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">/</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Search</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+F</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Quick search</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">c</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Jump to playing track</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">1</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">2</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">3</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">4</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Focus library / playlists / tracks / queue</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">PageUp</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">PageDown</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Scroll up / down</td></tr>
             </tbody>
           </table>
         </div>
@@ -583,15 +584,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">l</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Like current track</td></tr>
-              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">a</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Add track to queue</td></tr>
-              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Delete</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Remove selected item from queue</td></tr>
-              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">R</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle radio mode</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">A</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Add to playlist</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">D</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Remove from playlist</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Alt+D</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Delete playlist</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">z</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle fullscreen player</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">m</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle compact mode</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">v</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle visualizer</td></tr>
               <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">y</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle lyrics</td></tr>
-              <tr><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">?</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Open help panel</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">d</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle debug overlay (CPU, memory, logs)</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Shift+B</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle breadcrumb</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">t</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Open settings panel</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">:</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Command prompt</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+Y</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Copy track link</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">?</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Open help panel</td></tr>
+              <tr><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">q</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+C</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Quit</td></tr>
             </tbody>
           </table>
         </div>
@@ -626,7 +632,7 @@
               Supported formats: <strong class="text-light-text dark:text-on-surface">MP3, FLAC, OGG, WAV, AIFF</strong>.
               Navigate to <strong class="text-light-text dark:text-on-surface">Local Files</strong> in the library panel and press Enter to scan.
               The first scan extracts metadata and embedded cover art, cached in SQLite for instant loads.
-              Mix local and Spotify tracks in the same queue - isi-music routes each track to the appropriate player automatically.
+              Mix local and Spotify tracks in the same queue: isi-music routes each track to the appropriate player automatically.
             </p>
           </div>
         </div>
@@ -646,6 +652,9 @@
               <li>Set the Redirect URI to <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">http://127.0.0.1:8888/callback</code></li>
               <li>Copy the Client ID and run <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">isi-music setup-spotify</code></li>
             </ol>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mt-4">
+              The setup command performs a single unified authentication that chains the Web API OAuth (PKCE) and the streaming OAuth (librespot) in one flow. You only need to authorize once through the browser. The Web API refresh token is saved immediately after the first step, so it persists even if the streaming connection fails and you can retry the streaming part without re-authorizing the Web API.
+            </p>
           </div>
         </div>
       </section>
@@ -841,7 +850,7 @@
         <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
           <div class="p-6">
             <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
-              Requires Rust 1.85+ (edition 2024).
+              Requires Rust 1.88+ (edition 2024).
             </p>
             <div class="glass-panel rounded overflow-hidden mb-4">
               <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
