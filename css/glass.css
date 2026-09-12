@@ -9,7 +9,6 @@
 .dark .glass-panel {
   background: rgba(30, 41, 59, 0.4);
   border: 1px solid rgba(168, 232, 255, 0.1);
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .glass-card {
@@ -35,5 +34,5 @@
 
 .dark .glass-card:hover {
   border-color: rgba(168, 232, 255, 0.3);
-  box-shadow: 0 0 15px rgba(168, 232, 255, 0.1);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
 }

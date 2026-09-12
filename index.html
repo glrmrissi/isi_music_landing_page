@@ -117,7 +117,6 @@
 </head>
 
 <body class="font-body-base text-body-base antialiased selection:bg-light-primary/20 dark:selection:bg-primary-container selection:text-light-text dark:selection:text-on-primary-container relative">
-  <div class="bg-glow"></div>
 
   
   <header class="bg-white/80 dark:bg-background/80 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-light-border dark:border-outline-variant/20">
@@ -130,6 +129,7 @@
         <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors duration-200" href="#features">Features</a>
         <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors duration-200" href="#install">Install</a>
         <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors duration-200" href="docs/">Docs</a>
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors duration-200" href="changelog.html">Changelog</a>
       </nav>
 
       <div class="flex items-center gap-4">
@@ -151,12 +151,7 @@
   <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
     <section class="min-h-[716px] flex flex-col justify-center items-center text-center py-section-gap relative">
       <div class="space-y-6 max-w-3xl fade-in-up">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 rounded-full mb-4">
-          <span class="w-2 h-2 rounded-full bg-light-primary dark:bg-primary animate-pulse"></span>
-          <span class="font-label-caps text-label-caps text-light-primary dark:text-primary tracking-widest">[v2.0.0]</span>
-        </div>
-
-        <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-light-text dark:text-on-surface drop-shadow-sm dark:drop-shadow-md">
+        <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-light-text dark:text-on-surface ">
           <span class="text-light-primary dark:text-primary">&gt;</span> isi-music<span class="cursor-blink text-light-primary dark:text-primary">_</span>
         </h1>
 
@@ -166,7 +161,7 @@
 
         <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            class="w-full sm:w-auto px-8 py-3 bg-light-primary dark:bg-primary text-white dark:text-on-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/90 dark:hover:bg-primary-fixed transition-colors shadow-lg dark:shadow-[0_0_15px_rgba(168,232,255,0.4)] active:scale-95 flex items-center justify-center gap-2"
+            class="w-full sm:w-auto px-8 py-3 bg-light-primary dark:bg-primary text-white dark:text-on-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/90 dark:hover:bg-primary-fixed transition-colors shadow-lg dark:shadow-lg active:scale-95 flex items-center justify-center gap-2"
             href="#install"
           >
             <span class="material-symbols-outlined text-[18px]">download</span>
@@ -184,10 +179,7 @@
 
       <div class="mt-20 w-full max-w-4xl glass-panel rounded-lg overflow-hidden fade-in-up delay-200 relative scanlines border border-light-border dark:border-outline-variant/30 shadow-xl dark:shadow-2xl">
         <div class="terminal-header px-4 py-2 flex items-center gap-2">
-          <span class="terminal-dot bg-red-400 dark:bg-error"></span>
-          <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
-          <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
-          <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-2">isi-music --play</span>
+          <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline">isi-music --play</span>
         </div>
         <div class="p-6 h-64 bg-slate-900 dark:bg-[#0b0e14] font-code-sm text-code-sm text-sky-300 dark:text-primary/80 overflow-hidden relative flex flex-col justify-end">
           <div class="flex items-end gap-[2px] h-32 w-full opacity-70">
@@ -239,7 +231,7 @@
           <div>
             <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">Local Playback</h3>
             <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
-              Lightning-fast playback for FLAC, WAV, MP3, OGG, and AIFF with automatic metadata extraction.
+              Lightning-fast playback for FLAC, WAV, MP3, OGG, and AIFF with automatic metadata extraction. Works standalone: no Spotify account required in local-only mode.
             </p>
           </div>
         </div>
@@ -327,6 +319,42 @@
             </p>
           </div>
         </div>
+
+        <div class="glass-card p-6 rounded-lg fade-in-up delay-100 flex flex-col items-start gap-4">
+          <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+            <span class="material-symbols-outlined text-light-primary dark:text-primary">music_video</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">Windows Media Controls</h3>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
+              Native SMTC overlay and global media hotkeys on Windows. Play, pause, and skip from anywhere.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-lg fade-in-up delay-200 flex flex-col items-start gap-4 visible">
+          <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+            <span class="material-symbols-outlined text-light-primary dark:text-primary">radio</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">Radio Mode</h3>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
+              Continuous playback seeded by the current track, powered by Spotify recommendations. Press one key and let it flow.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-lg fade-in-up delay-300 flex flex-col items-start gap-4 visible">
+          <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+            <span class="material-symbols-outlined text-light-primary dark:text-primary">palette</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">Reactive Theme</h3>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
+              UI colors adapt to the album art palette on every track change. Eight presets and full theme.toml customization.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -348,12 +376,7 @@
           </div>
           <div class="glass-panel rounded overflow-hidden">
             <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
-              <div class="flex items-center gap-2">
-                <span class="terminal-dot bg-red-400 dark:bg-error"></span>
-                <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
-                <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
-                <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
-              </div>
+              <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline text-[10px]">bash</span>
               <button
                 class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors"
                 onclick="navigator.clipboard.writeText('curl -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-linux-x86_64 -o isi-music' + '\n' + 'chmod +x isi-music' + '\n' + 'sudo mv isi-music /usr/local/bin/')"
@@ -371,7 +394,8 @@
             </div>
           </div>
           <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-code-sm">
-            Dependencies: <span class="text-light-primary dark:text-primary font-code-sm text-code-sm">sudo apt install libasound2t64 libpulse0</span>
+            Dependencies: <span class="text-light-primary dark:text-primary font-code-sm text-code-sm">sudo apt install libasound2t64 libpulse0</span><br/>
+            Or via Homebrew: <span class="text-light-primary dark:text-primary font-code-sm text-code-sm">brew tap glrmrissi/isi-music && brew install isi-music</span> (x86_64 and ARM64)
           </p>
         </div>
 
@@ -384,15 +408,10 @@
           </div>
           <div class="glass-panel rounded overflow-hidden">
             <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
-              <div class="flex items-center gap-2">
-                <span class="terminal-dot bg-red-400 dark:bg-error"></span>
-                <span class="terminal-dot bg-[#fbbf24] dark:bg-[#f59e0b]"></span>
-                <span class="terminal-dot bg-[#34d399] dark:bg-[#10b981]"></span>
-                <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">powershell</span>
-              </div>
+              <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline text-[10px]">powershell</span>
               <button
                 class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors"
-                onclick="navigator.clipboard.writeText('Invoke-WebRequest -Uri https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-windows-x86_64.exe -OutFile isi-music.exe' + '\n' + 'mkdir \"$env:LOCALAPPDATA\\Programs\\isi-music\" -Force' + '\n' + 'move isi-music.exe \"$env:LOCALAPPDATA\\Programs\\isi-music\\\"')"
+                onclick="navigator.clipboard.writeText('irm https://raw.githubusercontent.com/glrmrissi/isi_music/master/scripts/install.ps1 | iex')"
                 title="Copy to clipboard"
               >
                 <span class="material-symbols-outlined text-[14px]">content_copy</span>
@@ -400,9 +419,7 @@
             </div>
             <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
               <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
-                <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">Invoke-WebRequest</span> -Uri .../isi-music-windows-x86_64.exe -OutFile isi-music.exe<br/>
-                <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">mkdir</span> "$env:LOCALAPPDATA\Programs\isi-music" -Force<br/>
-                <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">move</span> isi-music.exe "$env:LOCALAPPDATA\Programs\isi-music\"
+                <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">irm</span> https://raw.githubusercontent.com/glrmrissi/isi_music/master/scripts/install.ps1 | <span class="text-slate-100 dark:text-tertiary-container">iex</span>
               </code>
             </div>
           </div>
@@ -436,103 +453,103 @@
           </thead>
           <tbody class="font-code-sm text-code-sm text-light-text dark:text-on-surface">
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Tab</span> / <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Shift+Tab</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Next / Previous panel</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Space</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Play / Pause</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">n</span> / <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">p</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Next / Previous track. With shuffle, previous goes back through play history.</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">s</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Toggle shuffle</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">r</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Cycle repeat (off → queue → track)</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">=</span> / <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">-</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Volume up / down</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">/</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Search</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">a</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Add to queue</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">A</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Add to playlist</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">z</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Fullscreen player</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">v</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Visualizer</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">y</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Lyrics</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">l</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Like current track</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">t</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Settings panel</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">d</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Debug overlay (CPU, memory, logs)</td>
             </tr>
             <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">1</span> / <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">2</span> / <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">3</span> / <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">4</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Focus library / playlists / tracks / queue</td>
             </tr>
             <tr class="hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
-              <td class="p-4">
+              <td class="p-4 whitespace-nowrap">
                 <span class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">q</span>
               </td>
               <td class="p-4 text-light-text-muted dark:text-on-surface-variant">Quit</td>
@@ -626,13 +643,14 @@
       <div class="flex gap-6">
         <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/30 dark:decoration-primary/30 transition-colors" href="https://github.com/glrmrissi/isi_music">GitHub</a>
         <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/30 dark:decoration-primary/30 transition-colors" href="https://github.com/glrmrissi/isi_music/releases">Releases</a>
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/30 dark:decoration-primary/30 transition-colors" href="changelog.html">Changelog</a>
         <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/30 dark:decoration-primary/30 transition-colors" href="discord.html">Discord</a>
       </div>
     </div>
   </footer>
 
   
-  <button id="back-to-top" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-light-primary dark:bg-primary text-white dark:text-on-primary rounded-full shadow-lg dark:shadow-[0_0_15px_rgba(168,232,255,0.4)] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 active:scale-95">
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-light-primary dark:bg-primary text-white dark:text-on-primary rounded-full shadow-lg dark:shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 active:scale-95">
     <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
   </button>
 

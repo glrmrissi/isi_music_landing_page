@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>docs - isi-music</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="../../assets/icon_isi_music.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/icon_isi_music.png"/>
+
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "light-bg": "#f8fafc",
+            "light-surface": "#ffffff",
+            "light-text": "#0f172a",
+            "light-text-muted": "#475569",
+            "light-border": "#e2e8f0",
+            "light-primary": "#0284c7",
+            "on-secondary-fixed": "#111c2d",
+            "surface-container-high": "#272a31",
+            "surface-tint": "#3cd7ff",
+            "surface-variant": "#32353c",
+            "on-tertiary-fixed-variant": "#004c6e",
+            "primary-container": "#00d4ff",
+            "error": "#ffb4ab",
+            "on-secondary": "#263143",
+            "surface-container-lowest": "#0b0e14",
+            "secondary-fixed-dim": "#bcc7de",
+            "outline": "#859398",
+            "tertiary": "#c1e3ff",
+            "surface-container-highest": "#32353c",
+            "tertiary-container": "#7fcbff",
+            "inverse-surface": "#e1e2eb",
+            "tertiary-fixed": "#c9e6ff",
+            "secondary-fixed": "#d8e3fb",
+            "surface-container": "#1d2026",
+            "surface-dim": "#10131a",
+            "on-primary-fixed-variant": "#004e5f",
+            "primary-fixed-dim": "#3cd7ff",
+            "tertiary-fixed-dim": "#89ceff",
+            "on-secondary-fixed-variant": "#3c475a",
+            "outline-variant": "#3c494e",
+            "inverse-on-surface": "#2e3037",
+            "on-error-container": "#ffdad6",
+            "on-primary-container": "#00586b",
+            "on-error": "#690005",
+            "background": "#10131a",
+            "inverse-primary": "#00677e",
+            "on-tertiary-container": "#00557c",
+            "on-primary-fixed": "#001f27",
+            "primary-fixed": "#b4ebff",
+            "surface-container-low": "#191c22",
+            "on-surface-variant": "#bbc9cf",
+            "on-tertiary-fixed": "#001e2f",
+            "on-tertiary": "#00344d",
+            "on-surface": "#e1e2eb",
+            "on-secondary-container": "#aeb9d0",
+            "error-container": "#93000a",
+            "secondary": "#bcc7de",
+            "secondary-container": "#3e495d",
+            "on-primary": "#003642",
+            "surface-bright": "#363940",
+            "primary": "#a8e8ff",
+            "surface": "#10131a",
+            "on-background": "#e1e2eb",
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem",
+          },
+          spacing: {
+            "margin-mobile": "16px",
+            "margin-desktop": "64px",
+            gutter: "24px",
+            base: "4px",
+            "container-max": "1280px",
+            "section-gap": "120px",
+          },
+          fontFamily: {
+            "body-base": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "display-lg-mobile": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "code-sm": ["JetBrains Mono"],
+            "label-caps": ["JetBrains Mono"],
+          },
+          fontSize: {
+            "body-base": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "headline-md": ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "display-lg-mobile": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "800" }],
+            "code-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
+          },
+        },
+      },
+    };
+  </script>
+
+  
+  <link href="../../css/style.css" rel="stylesheet"/>
+</head>
+
+<body class="font-body-base text-body-base antialiased selection:bg-light-primary/20 dark:selection:bg-primary-container selection:text-light-text dark:selection:text-on-primary-container relative min-h-screen flex flex-col">
+
+  
+  <header class="bg-white/80 dark:bg-background/80 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-light-border dark:border-outline-variant/20">
+    <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-16">
+        <a class="flex items-center" href="../../">
+        <img src="../../assets/logo_isi_music.png" alt="isi-music" class="h-32 object-contain"/>
+      </a>
+
+      <nav class="hidden md:flex gap-8">
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors duration-200" href="../../#features">Features</a>
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors duration-200" href="../../#install">Install</a>
+        <a class="font-code-sm text-code-sm text-light-primary dark:text-primary border-b-2 border-light-primary dark:border-primary pb-1" href="#">Docs</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button
+          aria-label="Toggle Dark Mode"
+          class="text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary transition-colors p-1.5 rounded-full flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-light-primary/50 dark:focus:ring-primary/50"
+          id="theme-toggle"
+        >
+          <span class="material-symbols-outlined text-[20px]" id="theme-icon">light_mode</span>
+        </button>
+        <a
+          class="hidden md:inline-flex px-4 py-2 bg-light-primary dark:bg-primary text-white dark:text-on-primary font-label-caps text-label-caps rounded font-bold hover:bg-light-primary/90 dark:hover:bg-primary-fixed transition-colors active:scale-95"
+          href="https://github.com/glrmrissi/isi_music"
+        >GITHUB</a>
+      </div>
+    </div>
+  </header>
+
+  
+  <div class="flex flex-grow max-w-container-max mx-auto w-full">
+    
+    <aside id="docs-sidebar" class="hidden md:flex flex-col w-60 flex-shrink-0 border-r border-light-border dark:border-outline-variant/20 bg-white/50 dark:bg-surface-dim/50 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto">
+      <nav class="py-6 px-4 flex flex-col gap-1">
+        <div class="px-3 mb-4">
+          <label for="doc-version" class="font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant tracking-widest block mb-1">VERSION</label>
+          <select id="doc-version" class="w-full font-code-sm text-code-sm bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/30 rounded px-2 py-1.5 text-light-text dark:text-on-surface focus:outline-none focus:border-light-primary dark:focus:border-primary">
+          </select>
+        </div>
+        <span class="font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant px-3 mb-2 tracking-widest">GETTING STARTED</span>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded bg-light-primary/10 dark:bg-primary/10 text-light-primary dark:text-primary font-bold border-l-2 border-light-primary dark:border-primary" href="#about">About</a>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#installation">Installation</a>
+
+        <span class="font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant px-3 mt-6 mb-2 tracking-widest">GUIDE</span>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#configuration">Configuration</a>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#keybindings">Keybindings</a>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#local-files">Local Files</a>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#spotify-setup">Spotify Setup</a>
+
+        <span class="font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant px-3 mt-6 mb-2 tracking-widest">INTEGRATIONS</span>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#mpris">MPRIS2</a>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#smtc">SMTC (Windows)</a>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#lastfm">Last.fm</a>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#discord">Discord</a>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#daemon">Daemon Mode</a>
+
+        <span class="font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant px-3 mt-6 mb-2 tracking-widest">HELP</span>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#troubleshooting">Troubleshooting</a>
+
+        <span class="font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant px-3 mt-6 mb-2 tracking-widest">DEVELOPMENT</span>
+        <a class="font-code-sm text-code-sm px-3 py-2 rounded text-light-text-muted dark:text-on-surface-variant hover:bg-slate-100 dark:hover:bg-surface-container-high/50 hover:text-light-text dark:hover:text-on-surface transition-colors" href="#development">Build from Source</a>
+      </nav>
+    </aside>
+
+    
+    <button id="sidebar-toggle" class="md:hidden fixed bottom-6 left-6 z-50 w-12 h-12 bg-light-primary dark:bg-primary text-white dark:text-on-primary rounded-full shadow-lg dark:shadow-lg flex items-center justify-center active:scale-95">
+      <span class="material-symbols-outlined text-[20px]" id="sidebar-icon">menu</span>
+    </button>
+
+    
+    <main class="flex-grow px-6 md:px-12 py-12 overflow-y-auto min-w-0">
+
+      
+      <section id="about" class="mb-20 fade-in-up">
+        <div class="mb-8">
+          <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Overview</p>
+          <h1 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">About isi-music</h1>
+          <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant max-w-3xl">
+            isi-music is a terminal audio player for Spotify streaming and local file playback, built in Rust. It replaces resource-heavy desktop clients with a native TUI that runs in any terminal emulator - fast, lightweight, and keyboard-centric.
+          </p>
+        </div>
+
+        
+        <div class="glass-card rounded-lg overflow-hidden mb-8 border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="px-6 py-4 bg-slate-50 dark:bg-surface-container border-b border-light-border dark:border-outline-variant/20">
+            <h2 class="font-label-caps text-label-caps text-light-text dark:text-on-surface tracking-widest">Performance Specs</h2>
+          </div>
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-light-border dark:border-outline-variant/20">
+                <th class="px-6 py-3 font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant">Metric</th>
+                <th class="px-6 py-3 font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant">Value</th>
+                <th class="px-6 py-3 font-label-caps text-label-caps text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">Notes</th>
+              </tr>
+            </thead>
+            <tbody class="font-code-sm text-code-sm text-light-text dark:text-on-surface">
+              <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
+                <td class="px-6 py-4 font-semibold">RAM Usage</td>
+                <td class="px-6 py-4 text-light-primary dark:text-primary">36 to 44 MB</td>
+                <td class="px-6 py-4 text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">Scales with track duration</td>
+              </tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
+                <td class="px-6 py-4 font-semibold">CPU (no cover art)</td>
+                <td class="px-6 py-4 text-light-primary dark:text-primary">~0.3%</td>
+                <td class="px-6 py-4 text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">Minimal overhead during playback</td>
+              </tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
+                <td class="px-6 py-4 font-semibold">CPU (with cover art)</td>
+                <td class="px-6 py-4 text-light-primary dark:text-primary">~0.8%</td>
+                <td class="px-6 py-4 text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">Slight increase for image rendering</td>
+              </tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10 hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
+                <td class="px-6 py-4 font-semibold">Threads</td>
+                <td class="px-6 py-4 text-light-primary dark:text-primary">25 to 27</td>
+                <td class="px-6 py-4 text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">Async tokio workers, lightweight</td>
+              </tr>
+              <tr class="hover:bg-slate-50 dark:hover:bg-surface-container-high/50 transition-colors">
+                <td class="px-6 py-4 font-semibold">Test Hardware</td>
+                <td class="px-6 py-4 text-light-primary dark:text-primary">Ryzen 4600G + WezTerm</td>
+                <td class="px-6 py-4 text-light-text-muted dark:text-on-surface-variant hidden lg:table-cell">6-core / 12-thread APU</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="lg:hidden border-t border-light-border dark:border-outline-variant/20 px-6 py-4">
+            <p class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant text-code-sm">
+              Tested on AMD Ryzen 4600G (6C/12T) with WezTerm terminal emulator.
+            </p>
+          </div>
+        </div>
+
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="glass-card p-6 rounded-lg fade-in-up delay-100 flex flex-col gap-4">
+            <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+              <span class="material-symbols-outlined text-light-primary dark:text-primary">memory</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">Why RAM scales</h3>
+              <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-[15px]">
+                The audio buffer runs in memory for speed, much faster than reading from the file protocol. Longer tracks mean a larger buffer, so memory usage grows with track duration.
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg fade-in-up delay-200 flex flex-col gap-4">
+            <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+              <span class="material-symbols-outlined text-light-primary dark:text-primary">developer_board</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">25+ threads? Not a lot.</h3>
+              <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-[15px]">
+                Tokio runtime, audio decoding, Spotify API calls, UI rendering: everything is async. Each thread is lightweight and idle most of the time. This is normal for a Rust async app.
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg fade-in-up delay-300 flex flex-col gap-4">
+            <div class="w-12 h-12 bg-slate-100 dark:bg-surface-container border border-light-primary/20 dark:border-primary/20 flex items-center justify-center rounded">
+              <span class="material-symbols-outlined text-light-primary dark:text-primary">speed</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-[20px] text-light-text dark:text-on-surface mb-2">Sub-1% CPU</h3>
+              <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-[15px]">
+                Even with cover art rendering, isi-music stays under 1% CPU. Rust + ratatui + async = minimal resource footprint. Your terminal stays responsive.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="installation" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Setup</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Installation</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="px-6 py-4 bg-slate-50 dark:bg-surface-container border-b border-light-border dark:border-outline-variant/20">
+            <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold">Prerequisites: Nerd Font</h3>
+          </div>
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              A Nerd Font is required for proper album art and UI rendering.
+            </p>
+            <div class="font-code-sm text-code-sm">
+              <div class="glass-panel rounded overflow-hidden">
+                <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
+                  </div>
+                  <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('mkdir -p ~/.local/share/fonts' + '\n' + 'unzip NerdFont.zip -d ~/.local/share/fonts' + '\n' + 'fc-cache -fv')" title="Copy to clipboard">
+                    <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                  </button>
+                </div>
+                <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+                  <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
+                    <span class="text-sky-400 dark:text-primary">$</span> mkdir -p ~/.local/share/fonts<br/>
+                    <span class="text-sky-400 dark:text-primary">$</span> unzip NerdFont.zip -d ~/.local/share/fonts<br/>
+                    <span class="text-sky-400 dark:text-primary">$</span> fc-cache -fv
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 mt-6 fade-in-up delay-200">
+          <div class="px-6 py-4 bg-slate-50 dark:bg-surface-container border-b border-light-border dark:border-outline-variant/20">
+            <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold">Download</h3>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="glass-panel rounded overflow-hidden">
+                <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
+                  </div>
+                  <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('curl -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-linux-x86_64 -o isi-music' + '\n' + 'chmod +x isi-music' + '\n' + 'sudo mv isi-music /usr/local/bin/')" title="Copy to clipboard">
+                    <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                  </button>
+                </div>
+                <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+                  <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
+                    <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">curl</span> -L https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-linux-x86_64 -o isi-music<br/>
+                    <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">chmod</span> +x isi-music<br/>
+                    <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">sudo</span> mv isi-music /usr/local/bin/
+                  </code>
+                </div>
+              </div>
+              <div class="glass-panel rounded overflow-hidden">
+                <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">powershell</span>
+                  </div>
+                  <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('Invoke-WebRequest -Uri https://github.com/glrmrissi/isi_music/releases/latest/download/isi-music-windows-x86_64.exe -OutFile isi-music.exe' + '\n' + 'mkdir \"$env:LOCALAPPDATA\\Programs\\isi-music\" -Force' + '\n' + 'move isi-music.exe \"$env:LOCALAPPDATA\\Programs\\isi-music\\\"')" title="Copy to clipboard">
+                    <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                  </button>
+                </div>
+                <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+                  <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
+                    <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">Invoke-WebRequest</span> -Uri .../isi-music-windows-x86_64.exe<br/>
+                    <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">mkdir</span> "$env:LOCALAPPDATA\Programs\isi-music" -Force<br/>
+                    <span class="text-sky-400 dark:text-primary">PS></span> <span class="text-slate-100 dark:text-tertiary-container">move</span> isi-music.exe "$env:LOCALAPPDATA\Programs\isi-music\"
+                  </code>
+                </div>
+              </div>
+            </div>
+            <h4 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold mb-2">Linux Audio Dependencies</h4>
+            <div class="bg-slate-900 dark:bg-[#0b0e14] rounded overflow-hidden">
+              <table class="w-full text-left text-[12px]">
+                <thead>
+                  <tr class="border-b border-slate-700">
+                    <th class="px-4 py-2 text-sky-400 dark:text-primary font-bold">Distro</th>
+                    <th class="px-4 py-2 text-sky-400 dark:text-primary font-bold">Command</th>
+                  </tr>
+                </thead>
+                <tbody class="text-slate-100">
+                  <tr class="border-b border-slate-700">
+                    <td class="px-4 py-2">Debian / Ubuntu</td>
+                    <td class="px-4 py-2"><code class="text-slate-100">sudo apt install libasound2t64 libpulse0</code></td>
+                  </tr>
+                  <tr class="border-b border-slate-700">
+                    <td class="px-4 py-2">Arch Linux</td>
+                    <td class="px-4 py-2"><code class="text-slate-100">sudo pacman -S alsa-lib libpulse</code></td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2">Fedora</td>
+                    <td class="px-4 py-2"><code class="text-slate-100">sudo dnf install alsa-lib pulseaudio-libs</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="configuration" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Customize</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Configuration</h2>
+
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="px-6 py-4 bg-slate-50 dark:bg-surface-container border-b border-light-border dark:border-outline-variant/20">
+            <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold">config.toml</h3>
+          </div>
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              All config lives under <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">~/.config/isi-music/</code> on Linux and <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">%APPDATA%\isi-music\</code> on Windows.
+            </p>
+            <div class="glass-panel rounded overflow-hidden">
+              <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">toml</span>
+                </div>
+                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('[spotify]' + '\n' + 'client_id = &quot;your_client_id_here&quot;' + '\n' + 'enabled = true' + '\n' + '' + '\n' + '[local]' + '\n' + 'music_dir = &quot;~/Music&quot;' + '\n' + '' + '\n' + '[lastfm]' + '\n' + 'session_key = &quot;obtained_via_setup-lastfm&quot;' + '\n' + '' + '\n' + '[discord]' + '\n' + 'enabled = true' + '\n' + 'app_id = &quot;optional_custom_app_id&quot;' + '\n' + '' + '\n' + '[musixmatch]' + '\n' + 'musixmatch_api_key = &quot;your_musixmatch_api_key&quot;' + '\n' + '' + '\n' + '[ui]' + '\n' + 'show_cover_images = true' + '\n' + 'enable_lyrics = true' + '\n' + 'show_visualizer = false' + '\n' + 'default_layout = &quot;default&quot;' + '\n' + 'compact_mode_default = false' + '\n' + 'show_breadcrumb = true' + '\n' + 'autoplay = true' + '\n' + '' + '\n' + '[audio]' + '\n' + 'gapless = true' + '\n' + 'bitrate = 320' + '\n' + '' + '\n' + '[options]' + '\n' + 'hot_reload = true' + '\n' + 'smtc_enabled = true' + '\n' + 'media_keys_enabled = true' + '\n' + '' + '\n' + '[cache]' + '\n' + 'enabled = true' + '\n' + 'auto_cleanup = true' + '\n' + 'max_size_mb = 500' + '\n' + 'cleanup_interval_hours = 24' + '\n' + 'keep_days = 30')" title="Copy to clipboard">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                </button>
+              </div>
+              <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+              <code class="font-code-sm text-code-sm text-[12px] text-slate-300 whitespace-nowrap leading-relaxed">
+                <span class="text-amber-400">[spotify]</span><br/>
+                <span class="text-slate-400">client_id = </span><span class="text-green-400">"your_client_id_here"</span><br/>
+                <span class="text-slate-400">enabled = </span><span class="text-purple-400">true</span> <span class="text-slate-500"># false = local-only mode</span><br/><br/>
+                <span class="text-amber-400">[local]</span><br/>
+                <span class="text-slate-400">music_dir = </span><span class="text-green-400">"~/Music"</span><br/><br/>
+                <span class="text-amber-400">[lastfm]</span><br/>
+                <span class="text-slate-400">session_key = </span><span class="text-green-400">"obtained_via_setup-lastfm"</span><br/><br/>
+                <span class="text-amber-400">[discord]</span><br/>
+                <span class="text-slate-400">enabled = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">app_id = </span><span class="text-green-400">"optional_custom_app_id"</span><br/><br/>
+                <span class="text-amber-400">[musixmatch]</span><br/>
+                <span class="text-slate-400">musixmatch_api_key = </span><span class="text-green-400">"your_musixmatch_api_key"</span><br/><br/>
+                <span class="text-amber-400">[ui]</span><br/>
+                <span class="text-slate-400">show_cover_images = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">enable_lyrics = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">show_visualizer = </span><span class="text-purple-400">false</span><br/>
+                <span class="text-slate-400">default_layout = </span><span class="text-green-400">"default"</span><br/>
+                <span class="text-slate-400">compact_mode_default = </span><span class="text-purple-400">false</span><br/>
+                <span class="text-slate-400">show_breadcrumb = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">autoplay = </span><span class="text-purple-400">true</span><br/><br/>
+                <span class="text-amber-400">[audio]</span><br/>
+                <span class="text-slate-400">gapless = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">bitrate = </span><span class="text-purple-400">320</span> <span class="text-slate-500"># 96, 160, or 320</span><br/><br/>
+                <span class="text-amber-400">[options]</span><br/>
+                <span class="text-slate-400">hot_reload = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">smtc_enabled = </span><span class="text-purple-400">true</span> <span class="text-slate-500"># Windows</span><br/>
+                <span class="text-slate-400">media_keys_enabled = </span><span class="text-purple-400">true</span> <span class="text-slate-500"># Windows</span><br/><br/>
+                <span class="text-amber-400">[cache]</span><br/>
+                <span class="text-slate-400">enabled = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">auto_cleanup = </span><span class="text-purple-400">true</span><br/>
+                <span class="text-slate-400">max_size_mb = </span><span class="text-purple-400">500</span><br/>
+                <span class="text-slate-400">cleanup_interval_hours = </span><span class="text-purple-400">24</span><br/>
+                <span class="text-slate-400">keep_days = </span><span class="text-purple-400">30</span>
+              </code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 mt-6 fade-in-up delay-200">
+          <div class="px-6 py-4 bg-slate-50 dark:bg-surface-container border-b border-light-border dark:border-outline-variant/20">
+            <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold">Theme</h3>
+          </div>
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              Create <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">~/.config/isi-music/theme.toml</code> to customize colors and layout.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <div class="glass-panel rounded overflow-hidden">
+                <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">toml</span>
+                  </div>
+                  <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('border_active = &quot;#00d4ff&quot;' + '\n' + 'border_inactive = &quot;#ffffff&quot;' + '\n' + 'highlight_bg = &quot;#004b7a&quot;' + '\n' + 'text_primary = &quot;#ffffff&quot;' + '\n' + 'accent_color = &quot;#ffeb3b&quot;' + '\n' + 'background = &quot;#141414&quot;' + '\n' + 'text_secondary = &quot;#888888&quot;' + '\n' + 'status_bar = &quot;#1e1e1e&quot;')" title="Copy to clipboard">
+                    <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                  </button>
+                </div>
+                <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+                <code class="font-code-sm text-code-sm text-[12px] text-slate-300 whitespace-nowrap leading-relaxed">
+                  <span class="text-slate-400">border_active = </span><span class="text-green-400">"#00d4ff"</span><br/>
+                  <span class="text-slate-400">border_inactive = </span><span class="text-green-400">"#ffffff"</span><br/>
+                  <span class="text-slate-400">highlight_bg = </span><span class="text-green-400">"#004b7a"</span><br/>
+                  <span class="text-slate-400">text_primary = </span><span class="text-green-400">"#ffffff"</span><br/>
+                  <span class="text-slate-400">accent_color = </span><span class="text-green-400">"#ffeb3b"</span><br/>
+                  <span class="text-slate-400">background = </span><span class="text-green-400">"#141414"</span><br/>
+                  <span class="text-slate-400">text_secondary = </span><span class="text-green-400">"#888888"</span><br/>
+                  <span class="text-slate-400">status_bar = </span><span class="text-green-400">"#1e1e1e"</span>
+                </code>
+                </div>
+              </div>
+              <div class="bg-slate-900 dark:bg-[#0b0e14] rounded p-4 overflow-x-auto">
+                <table class="w-full text-[12px]">
+                  <thead>
+                    <tr class="border-b border-slate-700">
+                      <th class="px-2 py-1 text-left text-sky-400 dark:text-primary font-bold">Variable</th>
+                      <th class="px-2 py-1 text-left text-sky-400 dark:text-primary font-bold">Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-100">
+                    <tr><td class="px-2 py-1">border_active</td><td class="px-2 py-1 text-slate-400">Focused panel borders</td></tr>
+                    <tr><td class="px-2 py-1">border_inactive</td><td class="px-2 py-1 text-slate-400">Unfocused borders</td></tr>
+                    <tr><td class="px-2 py-1">highlight_bg</td><td class="px-2 py-1 text-slate-400">Selected list items</td></tr>
+                    <tr><td class="px-2 py-1">text_primary</td><td class="px-2 py-1 text-slate-400">Titles, primary text</td></tr>
+                    <tr><td class="px-2 py-1">accent_color</td><td class="px-2 py-1 text-slate-400">Progress bars, icons</td></tr>
+                    <tr><td class="px-2 py-1">background</td><td class="px-2 py-1 text-slate-400">Root background fill</td></tr>
+                    <tr><td class="px-2 py-1">text_secondary</td><td class="px-2 py-1 text-slate-400">Subtle text, timestamps</td></tr>
+                    <tr><td class="px-2 py-1">status_bar</td><td class="px-2 py-1 text-slate-400">Bottom status bar</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mt-4 text-[14px]">
+              Run <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">isi-music setup</code> for 8 color presets that preserve your existing layout settings.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="keybindings" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Keyboard</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Keybindings</h2>
+        <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant max-w-3xl mb-4">
+          Vim-inspired keybindings with customizable keybinds via <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">keybinds.toml</code>. Keep your hands on the keyboard - no mouse required.
+        </p>
+
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="px-6 py-4 bg-slate-50 dark:bg-surface-container border-b border-light-border dark:border-outline-variant/20">
+            <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold">Playback</h3>
+          </div>
+          <table class="w-full text-left border-collapse font-code-sm text-code-sm text-light-text dark:text-on-surface">
+            <thead>
+              <tr class="border-b border-light-border dark:border-outline-variant/20 bg-slate-100 dark:bg-surface-container">
+                <th class="px-6 py-3 font-label-caps text-light-text-muted dark:text-on-surface-variant">Key</th>
+                <th class="px-6 py-3 font-label-caps text-light-text-muted dark:text-on-surface-variant">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Space</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Play / Pause</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">n</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">p</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Next / Previous track. With shuffle on, previous goes back through actual play history.</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">=</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">-</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Volume up / down</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">←</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">→</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Seek backward / forward 5s (hold for 10s)</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">5</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Seek to middle of track</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">s</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle shuffle</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">r</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Cycle repeat (off → queue → track)</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">´</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle radio mode</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Alt+R</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Get recommendations</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">l</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Like current track</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">a</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Add track to queue</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Delete</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Remove selected item from queue</td></tr>
+              <tr><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">o</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Sort tracks</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 mt-4 fade-in-up delay-200">
+          <div class="px-6 py-4 bg-slate-50 dark:bg-surface-container border-b border-light-border dark:border-outline-variant/20">
+            <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold">Navigation</h3>
+          </div>
+          <table class="w-full text-left border-collapse font-code-sm text-code-sm text-light-text dark:text-on-surface">
+            <thead>
+              <tr class="border-b border-light-border dark:border-outline-variant/20 bg-slate-100 dark:bg-surface-container">
+                <th class="px-6 py-3 font-label-caps text-light-text-muted dark:text-on-surface-variant">Key</th>
+                <th class="px-6 py-3 font-label-caps text-light-text-muted dark:text-on-surface-variant">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Tab</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Shift+Tab</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Next / Previous panel</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">↑</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">↓</kbd> or <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">k</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">j</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Navigate within a panel</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+↑</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+↓</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">First / last item</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">M</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Jump to middle of list</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Enter</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Play selected / open album or artist</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Esc</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Back / Close search / Exit fullscreen</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">/</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Search</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+F</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Quick search</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">c</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Jump to playing track</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">1</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">2</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">3</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">4</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Focus library / playlists / tracks / queue</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">PageUp</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">PageDown</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Scroll up / down</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 mt-4 fade-in-up delay-300">
+          <div class="px-6 py-4 bg-slate-50 dark:bg-surface-container border-b border-light-border dark:border-outline-variant/20">
+            <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold">Playlist &amp; Display</h3>
+          </div>
+          <table class="w-full text-left border-collapse font-code-sm text-code-sm text-light-text dark:text-on-surface">
+            <thead>
+              <tr class="border-b border-light-border dark:border-outline-variant/20 bg-slate-100 dark:bg-surface-container">
+                <th class="px-6 py-3 font-label-caps text-light-text-muted dark:text-on-surface-variant">Key</th>
+                <th class="px-6 py-3 font-label-caps text-light-text-muted dark:text-on-surface-variant">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">A</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Add to playlist</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">D</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Remove from playlist</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Alt+D</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Delete playlist</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">z</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle fullscreen player</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">m</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle compact mode</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">v</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle visualizer</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">y</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle lyrics</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">d</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle debug overlay (CPU, memory, logs)</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Shift+B</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Toggle breadcrumb</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">t</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Open settings panel</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">:</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Command prompt</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+Y</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Copy track link</td></tr>
+              <tr class="border-b border-light-border dark:border-outline-variant/10"><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">?</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Open help panel</td></tr>
+              <tr><td class="px-6 py-3"><kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">q</kbd> / <kbd class="px-2 py-1 bg-white dark:bg-surface-container border border-light-border dark:border-outline-variant/50 rounded text-light-primary dark:text-primary">Ctrl+C</kbd></td><td class="text-light-text-muted dark:text-on-surface-variant">Quit</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      
+      <section id="local-files" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Library</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Local Files</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              isi-music can play local audio files without a Spotify account. Point it at your music directory in <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">config.toml</code>:
+            </p>
+            <div class="glass-panel rounded overflow-hidden mb-4">
+              <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">toml</span>
+                </div>
+                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('[local]' + '\n' + 'music_dir = &quot;~/Music&quot;')" title="Copy to clipboard">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                </button>
+              </div>
+              <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+              <code class="font-code-sm text-code-sm text-[12px] text-slate-300 whitespace-nowrap leading-relaxed">
+                <span class="text-amber-400">[local]</span><br/>
+                <span class="text-slate-400">music_dir = </span><span class="text-green-400">"~/Music"</span>
+              </code>
+              </div>
+            </div>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
+              Supported formats: <strong class="text-light-text dark:text-on-surface">MP3, FLAC, OGG, WAV, AIFF</strong>.
+              Navigate to <strong class="text-light-text dark:text-on-surface">Local Files</strong> in the library panel and press Enter to scan.
+              The first scan extracts metadata and embedded cover art, cached in SQLite for instant loads.
+              Mix local and Spotify tracks in the same queue: isi-music routes each track to the appropriate player automatically.
+            </p>
+            <h4 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold mt-6 mb-2">Local-only mode</h4>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              No Spotify account at all? Set <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">enabled = false</code> under <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">[spotify]</code> to skip authentication entirely: no auth prompt, no Spotify sections, and your <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">music_dir</code> subfolders show up as playlists. Search still works across the local library, and Last.fm scrobbling stays available after <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">isi-music setup-lastfm</code>. Daemon mode requires Spotify and refuses to start in local-only mode.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="spotify-setup" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Client ID Required</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Spotify Setup</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              The February 2026 Spotify Web API changes require a Client ID for all API requests.
+            </p>
+            <ol class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant list-decimal list-inside space-y-2">
+              <li>Go to the <a class="text-light-primary dark:text-primary hover:underline" href="https://developer.spotify.com/dashboard">Spotify Developer Dashboard</a> and click <strong class="text-light-text dark:text-on-surface">"Create app"</strong></li>
+              <li>Set the Redirect URI to <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">http://127.0.0.1:8888/callback</code></li>
+              <li>Copy the Client ID and run <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">isi-music setup-spotify</code></li>
+            </ol>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mt-4">
+              The setup command performs a single unified authentication that chains the Web API OAuth (PKCE) and the streaming OAuth (librespot) in one flow. You only need to authorize once through the browser. The Web API refresh token is saved immediately after the first step, so it persists even if the streaming connection fails and you can retry the streaming part without re-authorizing the Web API.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="mpris" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Linux Desktop</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">MPRIS2 Integration</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              isi-music registers on D-Bus as <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">org.mpris.MediaPlayer2.isi_music</code>, enabling media keys, Waybar widgets, and <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">playerctl</code>. MPRIS works in both TUI and daemon modes.
+            </p>
+            <h4 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold mb-2">Waybar Config</h4>
+            <div class="glass-panel rounded overflow-hidden">
+              <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">toml</span>
+                </div>
+                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('&quot;mpris&quot;: {' + '\n' + '  &quot;format&quot;: &quot;{player_icon} {title} -- {artist}&quot;,' + '\n' + '  &quot;player-icons&quot;: { &quot;isi_music&quot;: &quot;&quot; },' + '\n' + '  &quot;status-icons&quot;: { &quot;playing&quot;: &quot;>&quot;, &quot;paused&quot;: &quot;||&quot; }' + '\n' + '}')" title="Copy to clipboard">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                </button>
+              </div>
+              <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+              <code class="font-code-sm text-code-sm text-[12px] text-slate-300 whitespace-nowrap leading-relaxed">
+                <span class="text-sky-400 dark:text-primary">"mpris"</span>: {<br/>
+                &nbsp;&nbsp;<span class="text-slate-400">"format"</span>: <span class="text-green-400">"{player_icon} {title} -- {artist}"</span>,<br/>
+                &nbsp;&nbsp;<span class="text-slate-400">"player-icons"</span>: { <span class="text-green-400">"isi_music"</span>: <span class="text-green-400">""</span> },<br/>
+                &nbsp;&nbsp;<span class="text-slate-400">"status-icons"</span>: { <span class="text-green-400">"playing"</span>: <span class="text-green-400">">"</span>, <span class="text-green-400">"paused"</span>: <span class="text-green-400">"||"</span> }<br/>
+                }
+              </code>
+              </div>
+            </div>
+            <h4 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold mt-4 mb-2">Hyprland Media Keys</h4>
+            <div class="glass-panel rounded overflow-hidden">
+              <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">conf</span>
+                </div>
+                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('bind = , XF86AudioPlay, exec, playerctl play-pause' + '\n' + 'bind = , XF86AudioNext, exec, playerctl next' + '\n' + 'bind = , XF86AudioPrev, exec, playerctl previous')" title="Copy to clipboard">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                </button>
+              </div>
+              <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+              <code class="font-code-sm text-code-sm text-[12px] text-slate-300 whitespace-nowrap leading-relaxed">
+                bind = , XF86AudioPlay, exec, playerctl play-pause<br/>
+                bind = , XF86AudioNext, exec, playerctl next<br/>
+                bind = , XF86AudioPrev, exec, playerctl previous
+              </code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="smtc" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Windows Desktop</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">SMTC (Windows)</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              On Windows, isi-music registers with System Media Transport Controls: the native volume-overlay media widget shows title, artist, and cover art, and global media hotkeys work from anywhere. Toggle via <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">[options] smtc_enabled</code> and <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">media_keys_enabled</code> in <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">config.toml</code>. Both are enabled by default.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lastfm" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Scrobble</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Last.fm</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              Run <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">isi-music setup-lastfm</code> to configure. It opens your browser for authorization and saves the resulting session key; API credentials are embedded at build time, no manual key entry needed. Works for both Spotify and local tracks.
+            </p>
+            <ul class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant space-y-2 list-disc list-inside">
+              <li>Track starts: <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">track.updateNowPlaying</code></li>
+              <li>Track reaches 50% or 4 minutes: <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">track.scrobble</code></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="discord" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Social</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Discord Rich Presence</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              Enable in <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">config.toml</code>:
+            </p>
+            <div class="glass-panel rounded overflow-hidden mb-4">
+              <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">toml</span>
+                </div>
+                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('[discord]' + '\n' + 'enabled = true')" title="Copy to clipboard">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                </button>
+              </div>
+              <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+              <code class="font-code-sm text-code-sm text-[12px] text-slate-300 whitespace-nowrap leading-relaxed">
+                <span class="text-amber-400">[discord]</span><br/>
+                <span class="text-slate-400">enabled = </span><span class="text-purple-400">true</span>
+              </code>
+              </div>
+            </div>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
+              Optional: use a custom app ID with <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">app_id = "your_custom_app_id"</code>. Your status shows "Listening to [Track] by [Artist]".
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="daemon" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Headless</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Daemon Mode</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              Keep playback running in the background, controlled from the command line.
+            </p>
+            <div class="glass-panel rounded overflow-hidden mb-4">
+              <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
+                </div>
+                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('isi-music --daemon' + '\n' + 'isi-music --play spotify:playlist:37i9dQZF1DXcBWIGoYBM5M' + '\n' + 'isi-music --liked' + '\n' + 'isi-music --ls' + '\n' + 'isi-music --play-id 2' + '\n' + 'isi-music --toggle' + '\n' + 'isi-music --next' + '\n' + 'isi-music --prev' + '\n' + 'isi-music --vol+' + '\n' + 'isi-music --status' + '\n' + 'isi-music --quit-daemon')" title="Copy to clipboard">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                </button>
+              </div>
+              <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+              <code class="font-code-sm text-code-sm text-slate-300 whitespace-nowrap leading-relaxed">
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --daemon<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --play spotify:playlist:37i9dQZF1DXcBWIGoYBM5M<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --liked<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --ls<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --play-id 2<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --toggle<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --next<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --prev<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --vol+<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --status<br/>
+                <span class="text-sky-400 dark:text-primary">$</span> isi-music --quit-daemon
+              </code>
+              </div>
+            </div>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant text-[14px]">
+              Logs at <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">~/.cache/isi-music/isi-music.log</code>. Clear with <code class="bg-slate-100 dark:bg-surface-container-highest px-2 py-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">isi-music --clear-logs</code>.
+              Daemon mode currently supports Spotify playback only.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="troubleshooting" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Help</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Troubleshooting</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6 space-y-4">
+            <div>
+              <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold mb-1">Local files showing "Unknown Artist"</h3>
+              <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">Delete the SQLite cache and covers, then restart:</p>
+              <div class="glass-panel rounded overflow-hidden mt-2">
+                <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
+                  </div>
+                  <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('rm ~/.local/share/isi-music/library.db' + '\n' + 'rm -rf ~/.cache/isi-music/covers/')" title="Copy to clipboard">
+                    <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                  </button>
+                </div>
+                <div class="p-3 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+                  <code class="font-code-sm text-code-sm text-slate-100 whitespace-nowrap">rm ~/.local/share/isi-music/library.db<br/>rm -rf ~/.cache/isi-music/covers/</code>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold mb-1">Album art not showing</h3>
+              <ul class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant list-disc list-inside">
+                <li>Ensure your terminal supports true color: <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">echo $COLORTERM</code></li>
+                <li>Verify a Nerd Font is installed and configured</li>
+                <li>Check that embedded artwork exists in your audio files</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-code-sm text-code-sm text-light-text dark:text-on-surface font-bold mb-1">MPRIS not working</h3>
+              <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">Ensure D-Bus is running and <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">DBUS_SESSION_BUS_ADDRESS</code> is set.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="development" class="mb-20 fade-in-up">
+        <p class="font-code-sm text-code-sm text-light-primary dark:text-primary uppercase tracking-widest mb-2">// Build from Source</p>
+        <h2 class="font-headline-md text-headline-md text-light-text dark:text-on-surface mb-4">Development</h2>
+        <div class="glass-card rounded-lg overflow-hidden border border-light-border dark:border-outline-variant/20 fade-in-up delay-100">
+          <div class="p-6">
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant mb-4">
+              Requires Rust 1.88+ (edition 2024).
+            </p>
+            <div class="glass-panel rounded overflow-hidden mb-4">
+              <div class="terminal-header px-3 py-2 flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-code-sm text-label-caps text-slate-500 dark:text-outline ml-1 text-[10px]">bash</span>
+                </div>
+                <button class="text-slate-500 dark:text-outline hover:text-light-primary dark:hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('git clone https://github.com/glrmrissi/isi_music.git' + '\n' + 'cd isi_music' + '\n' + 'sudo apt install libasound2-dev libpulse-dev libdbus-1-dev pkg-config' + '\n' + 'cargo build --release' + '\n' + 'cargo test')" title="Copy to clipboard">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                </button>
+              </div>
+              <div class="p-4 bg-slate-900 dark:bg-[#0b0e14] overflow-x-auto">
+                <code class="font-code-sm text-code-sm text-slate-300 dark:text-slate-300 whitespace-nowrap leading-relaxed">
+                  <span class="text-sky-400 dark:text-primary">$</span> git clone https://github.com/glrmrissi/isi_music.git<br/>
+                  <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">cd</span> isi_music<br/>
+                  <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">sudo apt install</span> libasound2-dev libpulse-dev libdbus-1-dev pkg-config<br/>
+                  <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">cargo build</span> --release<br/>
+                  <span class="text-sky-400 dark:text-primary">$</span> <span class="text-slate-100 dark:text-tertiary-container">cargo test</span>
+                </code>
+              </div>
+            </div>
+            <p class="font-body-base text-body-base text-light-text-muted dark:text-on-surface-variant">
+              Run with debug logging: <code class="bg-slate-100 dark:bg-surface-container-highest px-1 rounded text-light-primary dark:text-primary font-code-sm text-code-sm">RUST_LOG=isi_music=debug cargo run</code>
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  
+  <footer class="bg-slate-50 dark:bg-surface-container-lowest border-t border-light-border dark:border-outline-variant w-full py-12 mt-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter max-w-container-max mx-auto">
+      <div class="flex items-center gap-2 font-code-sm text-code-sm text-light-primary dark:text-primary opacity-80 hover:opacity-100 transition-opacity">
+        <img src="../../assets/icon_isi_music.png" alt="isi-music" class="h-12 object-contain"/>
+        © 2026 ISI-MUSIC // RUST-POWERED AUDIO
+      </div>
+      <div class="flex gap-6">
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/40 dark:decoration-primary/40 transition-colors" href="https://github.com/glrmrissi/isi_music">SOURCE</a>
+        <a class="font-code-sm text-code-sm text-light-primary dark:text-primary underline decoration-light-primary/40 dark:decoration-primary/40 transition-colors" href="#">DOCS</a>
+        <a class="font-code-sm text-code-sm text-light-text-muted dark:text-on-surface-variant hover:text-light-primary dark:hover:text-primary underline decoration-light-primary/40 dark:decoration-primary/40 transition-colors" href="#">LICENSE</a>
+      </div>
+    </div>
+  </footer>
+
+  
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-light-primary dark:bg-primary text-white dark:text-on-primary rounded-full shadow-lg dark:shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 active:scale-95">
+    <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+  </button>
+
+  <script src="../../js/main.js"></script>
+  <script src="../../js/doc-versions.js"></script>
+  <script>
+    const sidebar = document.getElementById('docs-sidebar');
+    const toggle = document.getElementById('sidebar-toggle');
+    const icon = document.getElementById('sidebar-icon');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = sidebar.classList.contains('flex');
+      if (isOpen) {
+        sidebar.classList.add('hidden');
+        sidebar.classList.remove('flex');
+        icon.textContent = 'menu';
+      } else {
+        sidebar.classList.remove('hidden');
+        sidebar.classList.add('flex');
+        sidebar.classList.add('fixed', 'top-16', 'left-0', 'z-40', 'bg-white', 'dark:bg-surface-dim', 'shadow-xl');
+        icon.textContent = 'close';
+      }
+    });
+
+    const sections = document.querySelectorAll('main section[id]');
+    const sidebarLinks = document.querySelectorAll('#docs-sidebar nav a[href^="#"]');
+    const linkMap = {};
+    sidebarLinks.forEach(link => {
+      const id = link.getAttribute('href').slice(1);
+      linkMap[id] = link;
+    });
+
+    const activeClasses = ['bg-light-primary/10', 'dark:bg-primary/10', 'text-light-primary', 'dark:text-primary', 'font-bold', 'border-l-2', 'border-light-primary', 'dark:border-primary'];
+    const inactiveClasses = ['text-light-text-muted', 'dark:text-on-surface-variant'];
+
+    function setActive(id) {
+      sidebarLinks.forEach(link => {
+        activeClasses.forEach(c => link.classList.remove(c));
+        inactiveClasses.forEach(c => link.classList.add(c));
+      });
+      const active = linkMap[id];
+      if (active) {
+        inactiveClasses.forEach(c => active.classList.remove(c));
+        activeClasses.forEach(c => active.classList.add(c));
+      }
+    }
+
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = link.getAttribute('href').slice(1);
+        const section = document.getElementById(id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const scrollTo = window.scrollY + rect.top - 80 - window.innerHeight * 0.25;
+          window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        }
+      });
+    });
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          let currentId = '';
+          const triggerPoint = window.innerHeight * 0.3 + 64;
+          sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= triggerPoint) {
+              currentId = section.id;
+            }
+          });
+          if (currentId) setActive(currentId);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
+</body>
+</html>
